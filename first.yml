@@ -1,0 +1,29 @@
+name: first
+
+on: push
+
+jobs:
+  job1:
+    name: First job
+    runs-on: ubuntu-latest
+    steps:
+    - name: Step one
+    run: date
+  job2:
+    name: Second job
+    runs-on: windows-latest
+    steps:
+    - name: Print date
+    run: echo %date%
+  job3:
+    name: Third job
+    runs-on: macos-latest
+    - name: Print date
+    eun: date
+  job4:
+    name: Fourth job
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print date
+    run: date
+    needs: [job1, job2, job3]
